@@ -1,0 +1,39 @@
+Lab Exercise 3 – Guide Questions
+
+1. What are the main differences between XMLHttpRequest and Fetch API?
+
+Think of XHR as the old, clunky way of doing things, and Fetch as the modern upgrade.
+
+Syntax (The Flow): XHR relies on events and listeners (like onreadystatechange), which can get messy. Fetch uses Promises, which let you chain .then() commands. This keeps your code flat and organized instead of nesting functions inside functions.
+Handling Data: With XHR, you get a raw text string back, and you have to manually run JSON.parse() to make it usable. Fetch is smarter—it gives you a Response object that has a built-in .json() method that does the heavy lifting for you.
+Setup: XHR requires a checklist: create the object, call .open(), set up listeners, and finally .send(). Fetch is a one-liner. You just tell it where to go, and it goes.
+Error Handling (The Tricky Part): XHR considers a request "successful" technically even if the server sends a 404 or 500 error (because the request finished). You have to write extra code to catch those. Fetch is stricter: it only triggers a "fail" (catch) if the network actually goes down. If you get a 404, Fetch treats it as a successful response that you need to check manually.
+Readability: Because of the chaining, Fetch is much easier to read and debug than XHR.
+2. Why is the Fetch API considered more modern and readable?
+
+It basically fixes "callback hell."
+
+Promises > Callbacks: Instead of nesting functions deeper and deeper (which creates a "pyramid of doom"), Fetch lets you list steps in a straight line: "Do this, then do this, then do this."
+Clean Syntax: You can do a whole GET request in a single line of code.
+Fetch: fetch(url).then(r => r.json()).then(data => console.log(data));
+XHR: Requires about 5-10 lines of setup boilerplate.
+Works with Async/Await: Fetch plays perfectly with modern async/await syntax. This lets you write asynchronous code that looks like normal, synchronous code, making it super easy to follow.
+Native Support: It's built right into the browser, so you don't need to download any extra libraries to use it.
+3. What is the purpose of the .then() and .catch() methods in Fetch?
+
+These are the "Good Path" and the "Bad Path" for your request.
+
+.then(): This is what happens when things go right. The first .then() usually processes the raw response (like converting it to JSON). The second .then() is where you actually take that data and update your webpage.
+.catch(): This is the safety net. It runs if the Promise is rejected.
+Important Note: .catch() usually only triggers for network errors (like no Wi-Fi or a bad URL). It does not trigger for HTTP errors like 404 (Not Found) or 500 (Server Error). To catch those, you have to manually check response.ok inside your .then() block and throw an error yourself.
+Together, they replace the confusing if/else logic you used to need inside XHR's onreadystatechange.
+
+4. What happens when you send a POST request to the placeholder API?
+
+Since this is a fake API for testing, it basically acts like an echo chamber.
+
+It Simulates Creation: It pretends to save your data to a database, but it doesn't actually save it anywhere.
+The Response: The API takes whatever JSON data you sent in the body, sends it right back to you, and tacks on a fake id (usually 201) to make it look real.
+Temporary: The response is just for confirmation. If you try to look up that specific ID again with a GET request later, you'll get a 404 error because the data vanished as soon as the request finished. It's just a safe sandbox to practice your POST syntax without breaking a real server.
+
+

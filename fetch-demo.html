@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Exploring the Fetch API</h2>
+        <p class="subtitle">GET and POST requests to JSONPlaceholder API</p>
+
+        <div class="section">
+            <h3>GET Request - Fetch a Post</h3>
+            <div class="btn-group">
+                <button id="btnGet">Load Post Data</button>
+            </div>
+            <div id="getOutput" class="output-box">
+                <span class="placeholder">Click the button to fetch post #1.</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>POST Request - Create a Post</h3>
+            <div class="btn-group">
+                <button id="btnPost">Send New Post</button>
+            </div>
+            <div id="postOutput" class="output-box">
+                <span class="placeholder">Click the button to create a new post.</span>
+            </div>
+        </div>
+
+        <p class="footer-note">Endpoint: jsonplaceholder.typicode.com/posts</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

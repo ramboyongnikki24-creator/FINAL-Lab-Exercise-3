@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    max-width: 620px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a2e;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 28px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+button {
+    background-color: #1a1a2e;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #16213e;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.output-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 18px;
+    min-height: 50px;
+    line-height: 1.7;
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+.output-box.has-data {
+    border-color: #c8d6e5;
+    background-color: #f8f9fa;
+}
+
+.output-box.has-error {
+    border-color: #e74c3c;
+    background-color: #fdf0ef;
+}
+
+.output-box.has-success {
+    border-color: #27ae60;
+    background-color: #eafaf1;
+}
+
+.output-box .label {
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.output-box .title-text {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+.output-box .body-text {
+    color: #555;
+}
+
+.output-box .error-msg {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.output-box .success-msg {
+    color: #27ae60;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.output-box .post-id {
+    font-size: 15px;
+    color: #333;
+    margin-top: 6px;
+}
+
+.output-box .placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+}
